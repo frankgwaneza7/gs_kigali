@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GS KIGALI 🤔 </title>
+    
+    <style>
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8; 
+            color: #333;
+            line-height: 1.6;
+        }
+
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        
+        header {
+            background-color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            margin: 0 20px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header .logo {
+            font-size: 2.2em;
+            font-weight: 800;
+            color: #4f46e5; 
+            text-decoration: none;
+            margin-bottom: 15px;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #4f46e5;
+        }
+
+        
+        section {
+            padding: 60px 20px;
+            margin: 20px 20px; 
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(8, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        section:nth-of-type(even) { 
+            background-color: #f0f0f0;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        
+        #hero {
+            background-image: url('logo.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden; 
+        }
+
+        #hero::before { 
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px; 
+        }
+
+        #hero .hero-content {
+            position: relative; 
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        #hero h1 {
+            font-size: 3.5em;
+            font-weight: 900;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        #hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+       
+        .btn {
+            display: inline-block;
+            background-color: #4f46e5; 
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background-color: #4338ca; 
+            transform: translateY(-2px);
+        }
+
+        
+        #about .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        #about .about-content p {
+            margin-bottom: 20px;
+        }
+
+        
+        #team .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        #team .team-member {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #team .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        #team .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid #a78bfa; 
+        }
+
+        #team .team-member h3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        #team .team-member .role {
+            color: #4f46e5; 
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+
+        #team .team-member p {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        
+        #gallery .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #gallery .gallery-item {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #gallery .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        #gallery .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        #gallery .gallery-item .caption {
+            padding: 15px;
+            background-color: #f9f9f9;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        
+        #contact .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        #contact .contact-info,
+        #contact .contact-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact h3 {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #contact .contact-info p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        #contact .contact-info strong {
+            color: #4f46e5; 
+        }
+
+        #contact .social-links {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+        }
+
+        #contact .social-links a {
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        #contact .social-links a:hover {
+            color: #4f46e5; 
+        }
+
+        #contact .social-links svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        #contact form div {
+            margin-bottom: 15px;
+        }
+
+        #contact form label {
+            display: block;
+            font-size: 0.9em;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        #contact form input[type="text"],
+        #contact form input[type="email"],
+        #contact form textarea {
+            width: calc(100% - 20px); 
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box; 
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #contact form input:focus,
+        #contact form textarea:focus {
+            border-color: #4f46e5; 
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+        }
+
+        #contact form textarea {
+            resize: vertical;
+        }
+
+        #contact form button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #eee;
+            padding: 30px 20px;
+            margin: 20px 20px 0; 
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            text-align: center;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        footer .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        footer .footer-links a:hover {
+            color: #fff;
+        }
+
+        
+        @media (min-width: 768px) {
+            header {
+                flex-direction: row;
+                padding: 15px 40px;
+            }
+
+            header .logo {
+                margin-bottom: 0;
+            }
+
+            header nav ul li {
+                margin: 0 20px;
+            }
+
+            #hero {
+                height: 600px;
+            }
+
+            #hero h1 {
+                font-size: 4.5em;
+            }
+
+            #hero p {
+                font-size: 1.4em;
+            }
+
+            #team .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            #gallery .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            #contact .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0; 
+            }
+
+            header, section, footer {
+                margin: 0 auto; 
+                max-width: 1200px;
+            }
+            header {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" href="logo.png" class="logo">🤔</a>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+               <li ><a href="GS KIGALI.html"><b><p style="color: red;">APPLY</p></b></a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1><b>Welcome to GS KIGALI</b></h1>
+                <p>IREME RY' UBUREZI NIYO NTERO.</p>
+                <a href="#about" class="btn">Learn More</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <p>
+                  Uburezi bw'u Rwanda, n' inkingi y'iterambere k' u Rwanda ndetse no ku mahanga.Abana b' igihugu bose bakwiye amahirwe angana yaba abakobwa ndetse n' abahungu hatitawe ku mikoro ya buri umwe.  
+                </p>
+                <p style="color: #4f46e5;">
+                 The Parliament has enacted laws related to education, which aim to ensure access, equity, and quality at all levels. These laws establish the structure of the education system (primary, secondary, higher education, TVET), mandatory schooling, and the roles of various stakeholders.
+                </p>
+            </div>
+        </section>
+
+        <section id="team">
+            <h2 class="section-title">Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="jeanine.jpg" alt="HEAD MISTRESS">
+                    <h3>HEAD MISTRESS</h3>
+                    <p class="role">UMURIMO UNOZE NIYO NTERO</p>
+                    <p>Urubyiruko niyo ntambwe y' iterambere ry' igihugu.</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="DOS.png" alt="DOS GS KIGALI">
+                    <h3>DIRECTOR OF STUDIES</h3>
+                    <p class="role">IMYIGIRE MYIZA, ISOKO Y' UBUMENYI</p>
+                    <p>Turwubake, Turusigasire kandi Turuteze imbere.</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="" alt="OBED">
+                    <h3>SCHOOL IT</h3>
+                    <p class="role">ITERAMBERE N' IKORANABUHANGA</p>
+                    <p>Ireme ry' uburezi,Inkingi y' iterambere.</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="" alt="FRANK">
+                    <h3>FRANK</h3>
+                    <p class="role">THE DEVELOPER</p>
+                    
+                </div>
+
+                </div>
+        </section>
+
+        <section id="gallery">
+            <h2 class="section-title">Our Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="kigali1.jpg" alt="Event 1">
+                    <div class="caption">
+                        <p>LEADERS IN TECHNOLOGY</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="kigali2.jpg" alt="Project Work">
+                    <div class="caption">
+                        <p>SCHOOL OF VISION</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="kigali.jpg" alt="Team Meeting">
+                    <div class="caption">
+                        <p>SCHOOL OF ENTERTAINMENT</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="phoibe.jpg" alt="Impact">
+                    <div class="caption">
+                        <p>INSPIRE,EDUCATE AND EMPOWER RWANDA</p>
+                    </div>
+                </div>
+
+                </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>
+                        <strong>Address:</strong> 22PH+FM Kigali
+                    </p>
+                    <p>
+                        <strong>Phone:</strong> +250 788000000
+                    </p>
+                    <p>
+                        <strong>Email:</strong> 
+                    </p>
+                    <div class="social-links">
+                        <h4>Follow Us:</h4>
+                        <a href="#" aria-label="Twitter">
+                            <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.222 8.222 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.417-4.293 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012 10.792v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.188a11.644 11.644 0 006.29 1.843"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22H12c5.523 0 10-4.477 10-10z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="GitHub">
+                            <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.86 8.16 6.839 9.504.5.092.682-.217.682-.483 0-.237-.007-.867-.011-1.7V19.8c-2.78.6-3.37-1.34-3.37-1.34-.454-1.157-1.11-1.465-1.11-1.465-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.089 2.902.833.091-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.09.39-1.984 1.029-2.682-.103-.253-.446-1.27.098-2.65 0 0 .84-.268 2.75 1.025A9.303 9.303 0 0112 6.647c.85.004 1.7.115 2.5.346 1.91-1.293 2.75-1.025 2.75-1.025.546 1.38.202 2.398.098 2.65.64.698 1.029 1.592 1.029 2.682 0 3.841-2.335 4.687-4.565 4.935.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.577.688.484C19.14 20.16 22 16.418 22 12A10 10 0 0012 2z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form action="#" method="POST">
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name">
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div>
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 GS KIGALI. </p>
+        <p style=" font"><b >FRANK MADE IT</b></p>
+        
+    </footer>
+
+</body>
+</html>
